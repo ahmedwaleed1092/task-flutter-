@@ -1,0 +1,25 @@
+import 'package:flutter/material.dart';
+
+class TopSection extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Image.asset('images/R-rw.png', width: 350, height: 220),
+        Row(
+          children: [
+            Text(
+              'Chair',
+              style: TextStyle(
+                color: Color.fromARGB(255, 121, 119, 119),
+                fontSize: 28,
+              ),
+            ),
+            Spacer(),
+            Text('\$212', style: TextStyle(fontSize: 33)),
+          ],
+        ),
+      ],
+    );
+  }
+}

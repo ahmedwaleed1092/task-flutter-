@@ -1,0 +1,64 @@
+import 'package:flutter/material.dart';
+
+class BottomSection extends StatefulWidget {
+  @override
+  _BottomSectionState createState() => _BottomSectionState();
+}
+
+class _BottomSectionState extends State<BottomSection> {
+  int i = 1;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            _ColorCircle(color: Colors.blue),
+            _ColorCircle(color: Colors.red),
+            _ColorCircle(color: Colors.green),
+            _ColorCircle(color: Colors.yellow),
+          ],
+        ),
+        Row(
+          children: [
+            IconButton(
+              onPressed: () {
+                setState(() {
+                  i++;
+                });
+              },
+              icon: Icon(Icons.add),
+            ),
+            Text('$i'),
+            IconButton(
+              onPressed: () {
+                setState(() {
+                  i--;
+                });
+              },
+              icon: Icon(Icons.remove),
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+}
+
+class _ColorCircle extends StatelessWidget {
+  final Color color;
+
+  const _ColorCircle({required this.color});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: 8),
+      width: 50,
+      height: 50,
+      decoration: BoxDecoration(color: color, shape: BoxShape.circle),
+    );
+  }
+}
